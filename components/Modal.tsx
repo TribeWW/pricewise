@@ -8,9 +8,8 @@ import { addUserEmailToProduct } from "@/lib/actions";
 interface Props {
   productId: string;
 }
-
 const Modal = ({ productId }: Props) => {
-  let [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [email, setEmail] = useState("");
 

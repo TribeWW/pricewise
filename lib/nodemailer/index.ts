@@ -102,6 +102,7 @@ export const sendEmail = async (
     subject: emailContent.subject,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   transporter.sendMail(mailOptions, (error: any, info: any) => {
     if (error) return console.log(error);
 

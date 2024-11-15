@@ -10,6 +10,7 @@ const Notification = {
 const THRESHOLD_PERCENTAGE = 40;
 
 // Extracts and returns the price from a list of possible elements.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractPrice(...elements: any) {
   for (const element of elements) {
     const priceText = element.text().trim();
@@ -31,12 +32,14 @@ export function extractPrice(...elements: any) {
 }
 
 // Extracts and returns the currency symbol from an element.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractCurrency(element: any) {
   const currencyText = element.text().trim().slice(0, 1);
   return currencyText ? currencyText : "";
 }
 
 // Extracts description from two possible elements from amazon
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractDescription($: any) {
   // these are possible elements holding description of the product
   const selectors = [
@@ -49,6 +52,7 @@ export function extractDescription($: any) {
     const elements = $(selector);
     if (elements.length > 0) {
       const textContent = elements
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .map((_: any, element: any) => $(element).text().trim())
         .get()
         .join("\n");

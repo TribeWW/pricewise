@@ -15,6 +15,7 @@ export const maxDuration = 300; // This function can run for a maximum of 300 se
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET(request: Request) {
   try {
     connectToDB();
@@ -87,6 +88,7 @@ export async function GET(request: Request) {
       message: "Ok",
       data: updatedProducts,
     });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     throw new Error(`Failed to get all products: ${error.message}`);
   }
